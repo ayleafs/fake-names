@@ -1,0 +1,12 @@
+[
+  {
+    "modid": "fake-names",
+    "name": "Fake Names",
+    "description": "Change your IGN to be visibly whatever you want. This should go without saying, but it's your screen only.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [ "leafs" ]
+  }
+]
