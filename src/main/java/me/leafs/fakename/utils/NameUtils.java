@@ -31,6 +31,6 @@ public class NameUtils {
 
         String realName = profile.getName();
         // return the input with the real IGN replaced
-        return input.replace(realName, fakeName);
+        return input.replace(realName, ChatUtils.color(fakeName));
     }
 }

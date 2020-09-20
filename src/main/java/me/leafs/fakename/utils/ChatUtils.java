@@ -10,17 +10,22 @@ import java.util.regex.Pattern;
 
 public class ChatUtils {
     // stolen straight from EnumChatFormatting (why'd they make it fucking private?)
-    private static final Pattern COLOR_FORMAT = Pattern.compile("(?i)" + '\u00a7' + "[0-9A-FK-OR]");
+    private static final Pattern COLOR_FORMAT = Pattern.compile("(?i)[§&][0-9A-FK-OR]");
 
     public static void printChat(String message) {
         GuiNewChat chatGUI = Minecraft.getMinecraft().ingameGUI.getChatGUI();
-        Matcher matcher = COLOR_FORMAT.matcher(message);
+        message = ChatUtils.color(message);
+        chatGUI.printChatMessage(new ChatComponentText(message));
+    }
+
+    public static String color(String input) {
+        Matcher matcher = COLOR_FORMAT.matcher(input);
 
         while (matcher.find()) {
             String fullMatch = matcher.group(0);
-            message = message.replace(fullMatch, ChatFormatting.getByChar(fullMatch.charAt(1)).toString());
+            input = input.replace(fullMatch, ChatFormatting.getByChar(fullMatch.charAt(1)).toString());
         }
 
-        chatGUI.printChatMessage(new ChatComponentText(message));
+        return input;
     }
 }

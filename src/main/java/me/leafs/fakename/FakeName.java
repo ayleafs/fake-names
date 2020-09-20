@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = "fake-names", name = "Fake Name", version = "1.0")
+@Mod(modid = "fake-names", name = "Fake Name", version = "1.1")
 public class FakeName {
     @Mod.Instance
     public static FakeName instance;
