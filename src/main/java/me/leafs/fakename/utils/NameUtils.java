@@ -3,6 +3,7 @@ package me.leafs.fakename.utils;
 import com.mojang.authlib.GameProfile;
 import me.leafs.fakename.FakeName;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.EnumChatFormatting;
 
 public class NameUtils {
     @SuppressWarnings("unused") // it is used :(
@@ -30,7 +31,14 @@ public class NameUtils {
         }
 
         String realName = profile.getName();
+        String colored = ChatUtils.color(fakeName + "&r");
+
+        // add reset code to prevent color fuck ups
+        if (!colored.equals(fakeName)) {
+            colored += EnumChatFormatting.RESET;
+        }
+
         // return the input with the real IGN replaced
-        return input.replace(realName, ChatUtils.color(fakeName));
+        return input.replace(realName, colored);
     }
 }

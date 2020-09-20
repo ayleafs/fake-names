@@ -32,7 +32,7 @@ public class NameHandler implements ICommand {
         // if no arguments were provided then reset their name
         if (args.length == 0) {
             instance.setFakeName(null);
-            ChatUtils.printChat("§7Your fake name has been§d reset§7. To use this command please type §b/fakename <some name>");
+            ChatUtils.printChat("&7Your fake name has been&d reset&7. To use this command please type &b/fakename <some name>");
             return;
         }
 
@@ -40,8 +40,8 @@ public class NameHandler implements ICommand {
         String fakeName = String.join(" ", args);
         instance.setFakeName(fakeName);
 
-        ChatUtils.printChat("§7Your fake name has been set to §d" + fakeName + "§7.");
-        ChatUtils.printChat("§7Good choice... I think? I don't know this was hard-coded...\n§f- leafs §d<3");
+        ChatUtils.printChat("&7Your fake name has been set to &d" + fakeName + "&7.");
+        ChatUtils.printChat("&7Good choice... I think? I don't know this was hard-coded...\n&f- leafs &d<3");
     }
 
     @Override
