@@ -1,9 +1,12 @@
 package me.leafs.fakename.asm;
 
+import net.minecraftforge.common.ForgeVersion;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 import java.util.Map;
 
+@IFMLLoadingPlugin.SortingIndex(696969)
+@IFMLLoadingPlugin.MCVersion(ForgeVersion.mcVersion)
 public class FMLLoadingPlugin implements IFMLLoadingPlugin {
     @Override
     public String[] getASMTransformerClass() {
