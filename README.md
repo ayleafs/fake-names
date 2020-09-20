@@ -1,6 +1,9 @@
 # FakeName Mod
 This mod allows you to give yourself a fake name on your screen.
 
+## Video
+https://www.youtube.com/watch?v=ukCQ0lhPZjY
+
 ## How to use?
 Just do `/fakename <your fake IGN>`. As far as you're concerned, this should work for you.
 
