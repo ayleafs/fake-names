@@ -64,6 +64,12 @@ public class ConfigHandler {
         }
 
         // set the lastFakeName to whatever that is
-        fakeName = object.get("fake_name").getAsString();
+        JsonElement nameElem = object.get("fake_name");
+        if (nameElem == null) {
+            fakeName = null;
+            return;
+        }
+
+        fakeName = nameElem.getAsString();
     }
 }
