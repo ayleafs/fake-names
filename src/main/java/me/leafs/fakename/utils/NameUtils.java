@@ -12,7 +12,13 @@ public class NameUtils {
             return input;
         }
 
-        String fakeName = instance.getConfig().getFakeName();
+        // stupid bitch
+        ConfigHandler config = instance.getConfig();
+        if (config == null) {
+            return input;
+        }
+
+        String fakeName = config.getFakeName();
         if (fakeName == null || input == null) {
             return input; // don't proceed if the fakeName or input isn't set
         }
