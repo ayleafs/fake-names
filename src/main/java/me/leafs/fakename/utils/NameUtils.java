@@ -20,21 +20,22 @@ public class NameUtils {
         }
 
         String fakeName = config.getFakeName();
-        if (fakeName == null || input == null) {
+        GameProfile profile = Minecraft.getMinecraft().getSession().getProfile();
+        if (fakeName == null || input == null || profile == null) {
             return input; // don't proceed if the fakeName or input isn't set
         }
 
-        GameProfile profile = Minecraft.getMinecraft().getSession().getProfile();
-        // idfk how but we can never be too sure
-        if (profile == null) {
-            return input; // do nothing to the input
+        String realName = profile.getName();
+        if (!input.contains(realName)) {
+            return input;
         }
 
-        String realName = profile.getName();
-        String colored = ChatUtils.color(fakeName + "&r");
+        String colored = ChatUtils.color(fakeName);
 
         // add reset code to prevent color fuck ups
         if (!colored.equals(fakeName)) {
+            // TODO: 9/21/2020 make this better
+
             colored += EnumChatFormatting.RESET;
         }
 
